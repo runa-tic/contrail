@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>contrail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="map"></div>
+
+<header class="topbar glass">
+  <div class="brand"><span class="live-dot" id="liveDot"></span>contrail</div>
+  <div class="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+    <input id="search" type="text" placeholder="Callsign, reg, hex or type" autocomplete="off" spellcheck="false">
+    <kbd>/</kbd>
+    <ul id="results" class="results glass" hidden></ul>
+  </div>
+</header>
+
+<div class="status glass" id="status">
+  <span class="num" id="count">—</span><span class="muted">aircraft</span>
+  <span class="sep"></span><span class="muted" id="source">connecting</span>
+</div>
+
+<div class="hint glass" id="hint" hidden>World view refreshes every minute · zoom in for live positions</div>
+
+<div class="legend glass">
+  <div class="legend-bar"></div>
+  <div class="legend-ticks"><span>0</span><span>10k</span><span>20k</span><span>30k</span><span>40k+ ft</span></div>
+</div>
+
+<button class="locate glass" id="locate" title="Go to my location" aria-label="Go to my location">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><circle cx="12" cy="12" r="7"/></svg>
+</button>
+
+<aside class="panel glass" id="panel" aria-hidden="true">
+  <div class="photo" id="photo"></div>
+  <div class="panel-body">
+    <div class="panel-head">
+      <div>
+        <div class="callsign" id="pCallsign"></div>
+        <div class="sub" id="pSub"></div>
+      </div>
+      <button class="icon-btn" id="close" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="badges" id="pBadges"></div>
+    <p class="note" id="pNote" hidden></p>
+    <div class="route" id="pRoute" hidden></div>
+    <div class="grid" id="pGrid"></div>
+    <div class="spark-wrap">
+      <div class="label">Altitude, this session</div>
+      <svg class="spark" id="pSpark" viewBox="0 0 300 56" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="actions">
+      <button class="btn" id="follow">Follow</button>
+      <a class="btn ghost" id="globe" target="_blank" rel="noopener">Full history ↗</a>
+    </div>
+  </div>
+</aside>
+
+<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
