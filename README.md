@@ -19,3 +19,7 @@ Aircraft whose own GPS reports no usable accuracy (ADS-B v1+ with NIC and NACp b
 Search takes a callsign, registration, hex or an airline flight number: `SU213` becomes `AFL213` via the OpenFlights airline table (cached in `cache/`, with overrides for codes it lacks). Anything not on screen can be looked up across every feed: the world snapshot first, then adsb.fi and adsb.lol.
 
 Keys: `/` search, `Esc` close, `f` follow.
+
+## License
+
+MIT, see `LICENSE`. The aircraft data comes from the adsb.fi and adsb.lol feeders, photos from their planespotters.net photographers, and the map from CARTO and OpenStreetMap contributors.

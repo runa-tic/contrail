@@ -25,7 +25,7 @@ from urllib.parse import parse_qs, urlparse
 PORT = int(os.environ.get("CONTRAIL_PORT", "8740"))
 STATIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 # planespotters rejects requests whose User-Agent carries no contact URL
-UA = "contrail/0.1 (+%s)" % os.environ.get("CONTRAIL_CONTACT", "https://github.com/runa-tic")
+UA = "contrail/0.1 (+%s)" % os.environ.get("CONTRAIL_CONTACT", "https://github.com/runa-tic/contrail")
 CACHE_TTL = 2.0
 MIN_GAP = 1.1  # seconds between upstream calls, per source
 
